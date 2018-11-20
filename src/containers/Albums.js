@@ -41,6 +41,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   setAlbums,
   clearAlbums,
+  setPhotos,
   setAlbum
 }
 
