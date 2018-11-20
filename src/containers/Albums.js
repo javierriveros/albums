@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setAlbums, clearAlbums, setAlbum } from '../initializers/actions';
+import { setAlbums, clearAlbums, setAlbum, setPhotos } from '../initializers/actions';
 import axios from 'axios';
 import AlbumsList from '../components/AlbumsList';
 
