@@ -3,7 +3,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { PoseGroup } from 'react-pose';
 
+import Box from '../animations/Box';
 
 function PhotosCarrousel(props) {
   return (
@@ -11,19 +13,23 @@ function PhotosCarrousel(props) {
     //   {props.photos.map((photo, index) => <AlbumCard photo={photo} key={index} setPhoto={props.setPhoto} />)}
     // </Grid>
     <div className={props.classes.container}>
-      {props.photos.map((photo, index) => {
-        return (
-          <Card key={photo.id} className={props.classes.card}>
-            <img src={photo.baseUrl} className={props.classes.img} alt="" />
-            <CardContent>
-              <Typography variant="caption" component="p">
-                {photo.filename}
-              </Typography>
-            </CardContent>
-          </Card>
-        )
-      })
-      }
+      <PoseGroup>
+        {props.photos.map((photo, index) => {
+          return (
+            <Box key={photo.id} className={props.classes.card} i={index}>
+              <Card>
+                <img src={photo.baseUrl} className={props.classes.img} alt="" />
+                <CardContent>
+                  <Typography variant="caption" component="p">
+                    {photo.filename}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
+          )
+        })
+        }
+      </PoseGroup>
     </div>
   );
 }

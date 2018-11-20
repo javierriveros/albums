@@ -10,7 +10,10 @@ const AuthElements = function (props) {
   const logInButton = () => {
     if (props.user) {
       return (
-        [<Avatar src={props.user.photoURL} />, (<IconButton onClick={props.logout} color="inherit"><ExitToApp /></IconButton>)]
+        <>
+          <Avatar src={props.user.photoURL} />
+          <IconButton onClick={props.logout} color="inherit"><ExitToApp /></IconButton>
+        </>
       );
     }
     return (<Button variant="contained" onClick={props.login} >

@@ -23,13 +23,12 @@ class Albums extends Component {
         'Authorization': `Bearer ${this.props.token}`
       }
     }).then(r => {
-      console.log(r);
       this.props.setPhotos(r.data.albums);
     }).catch(console.log);
   }
 
   render() {
-    return (<AlbumsList albums={this.props.albums} setAlbum={this.props.setAlbum} />);
+    return (<AlbumsList albums={this.props.albums} mainAlbum={this.props.mainAlbum} setAlbum={this.props.setAlbum} />);
   }
 }
 
